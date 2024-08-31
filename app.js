@@ -35,3 +35,15 @@ app.post("/users", (req, res) => {
 app.listen(8080, () => {
     console.log("Servidor iniciado na porta 8080: http://localhost:8080");
 });
+
+app.put("/users/:id", (req, res) => { 
+    const { id } = req.params;
+    const { _id, name, email, situationId }= req.body;
+return res.json({ id, _id, name, situationId });
+
+});
+app.delete("/users/:id", (req, res) => {
+const { id } = req.params; 
+return res.json({ id });
+
+}); 
